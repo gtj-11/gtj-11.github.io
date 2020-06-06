@@ -269,10 +269,10 @@ p span {
    color: #E19900;
   }
 
-.tab .btnactive {
-  border-color: #E19900;
-  color: #E19900;
-   }
+ .tablinks.btnactive {
+  outline-color: #E19900 !important;
+  color: #E19900 !important;
+  }
 
 #intro {
   min-height: 90vh;
@@ -334,7 +334,7 @@ form {
 .input {
   background-color: transparent;
   border: none;
-  border-bottom: 2px solid #0E0F0F;
+  border-bottom: 1px solid #0E0F0F;
   border-radius: 0;
   outline: none;
   height: 45px;
@@ -344,6 +344,7 @@ form {
   margin: 0 0 8px 0;
   overflow: hidden;
   resize: none;
+  margin-bottom: 25px;
 }
 
 .reverse {

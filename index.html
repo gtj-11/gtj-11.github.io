@@ -8,30 +8,69 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.13.0/css/all.css" integrity="sha384-IIED/eyOkM6ihtOiQsX2zizxFBphgnv1zbe1bKA+njdFzkr6cDNy16jfIKWu4FNH" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
   <link rel="stylesheet" href="css/spectre.min.css">
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/animate.css">
 
+  <style>
+
+    .vertical {
+      border: 2px solid lightcoral;
+      min-width: 70px;
+      width: 5vw;
+      height: 100vh;
+      position: fixed;
+    }
+
+    .vertical a {
+      position: relative;
+      top: 50%;
+      transform-origin: center center;
+      transform: rotateZ(-90deg) translateY(-50%);
+
+    }
+
+    .vertical ul {
+      list-style-type: none;
+    }
+
+    .vertical li {
+      display: inline-block;
+    }
+
+  </style>
 
 </head>
 
 <body>
 
 
+  <div class="vertical-menu">
+    <div class="top-lng">
+    <i class="fas fa-globe-europe"></i>
+    <a href="#eng" class="" id="eng">ENG</a>
+    <a href="#it" class="" id="it">IT</a>
+    <a href="#de" class="" id="de">DE</a>
+    </div>
 
+    <div class="logo-container">
+    <a>Bunker H</a>
+    </div>
 
+    <div class="button-container">
+      <i class="fad fa-comments"></i>
+    </div>
+  </div>
 
   <div class="section" id="intro">
 
+
     <nav class="navbar">
+            <a class="logo-mobile">Bunker H</a>
             <span class="navbar-toggle" id="js-navbar-toggle">
               <i class="far fa-bars"></i>
             </span>
-            <div>
-            <a href="#de" class="logo trans" id="de">DE</a>
-             <a href="#it" class="logo trans" id="it">IT</a>
-             <a href="#eng" class="logo trans" id="eng">ENG</a>
-          </div>
             <div class="nav-wrapper" id="js-menu">
               <ul class="main-nav">
                   <li>
@@ -43,18 +82,15 @@
                   <li>
                       <a href="#" class="nav-links" id="js-navbar-toggle3">Going on</a>
                   </li>
-              </ul>
+
+                  <li class="hide-desk break"><i class="fas fa-globe-europe nav-links"></i>Language</li>
+                  <li class="hide-desk"><a href="#de" class="nav-links" id="de">Deutsch</a></li>
+                  <li class="hide-desk"><a href="#it" class="nav-links" id="it">Italiano</a></li>
+                  <li class="hide-desk"><a href="#eng" class="nav-links" id="eng">English</a></li>
+
             </div>
     </nav>
 
-
-    <div class="logo-reverse"><a href="#" class="logo decor">Bunker H</a></div>
-
-  <nav class="language">
-
-
-
-  </nav>
 
     <div class="columns">
       <div class="colum title">
@@ -69,7 +105,7 @@
 
     <div class="section" id="about">
       <div class="columns crop">
-        <div class="column col-5 col-lg-12">
+        <div  id="about-waypoint" class="column col-5 col-lg-12 animate__animated">
             <h1>The Project</h1>
             <p>
               Imagine a place, with unique spatial properties, where different people come together to share their ideas, knowledge and time in order to build up an exceptional space for creativity and culture, otherness, diversity and freedom.
@@ -83,13 +119,13 @@
             </p>
           </div>
           <div class="column col-1"></div>
-          <div class="column col-5 col-ml-auto col-lg-12 imgdiv">
+          <div id="about-waypoint2" class="column col-5 col-ml-auto col-lg-12 imgdiv animate__animated">
             <img src="img/concept.png" alt="The Bunker Concepts" class="centered">
           </div>
         </div>
       </div>
 
-        <div class="section" id="interact">
+        <div class="section animate__animated" id="interact-waypoint" id="interact">
           <div class="columns crop">
             <div class="column col-5 col-lg-12">
             </div>
@@ -103,13 +139,15 @@
 
             <div class="column col-5 col-lg-12 flexcolumn">
 
-                  <div class="tab">
-                    <button class="tablinks btnactive" rel="div_room1" rel2="svg_room1">Room1</button>
-                    <button class="tablinks" rel="div_room2" rel2="svg_room2">Room2</button>
-                    <button class="tablinks" rel="div_room2" rel2="svg_room2">Room3</button>
-                  </div>
+                    <div class="columns tabs">
+                    <div class="column col-3 col-xl-6 tablinks" rel="div_room1" rel2="svg_room1"><span>Room1</span></div>
+                    <div class="column col-3 col-xl-6 tablinks" rel="div_room2" rel2="svg_room2">Room2</div>
+                    <div class="column col-3 col-xl-6 tablinks" rel="div_room1" rel2="svg_room1">Room1</div>
+                    <div class="column col-3 col-xl-6 tablinks" rel="div_room1" rel2="svg_room1">Room1</div>
 
-                  <div class="column">
+                    </div>
+
+
                     <div id="div_room1" class="tabcontent tabactive">
                       <h3>Room 1</h3>
                       <p>Sustainable ennui organic sint umami mlkshk vape bicycle rights. Glossier blue bottle enim officia in actually incididunt velit esse dreamcatcher cornhole tbh leggings bushwick ut.</p>
@@ -127,7 +165,7 @@
                         <img src="img/concept.png" alt="The Bunker Concepts" class="centered">
                       </div>
                     </div>
-                  </div>
+
               </div>
 
             <div class="column col-2"></div>
@@ -147,21 +185,33 @@
               <div class="column col-5 col-lg-12 centercontent">
                 <div class="column reverse">
                   <form action="" method="get" id="questionaire1">
-                  <input type="submit" class="button-left"/>
+                  <input type="submit" name="submit" class="button-left"/>
                   </form>
-                  <textarea form="questionaire1" name="question1" placeholder="Type away (max. 750 signs please)" id="textarea1" class="input"></textarea>
+                  <textarea form="questionaire1" name="feedback" placeholder="Type away (max. 750 signs )" id="textarea1" class="input"></textarea>
                   <h5>Tell us what you think:</h5>
                 </div>
                 </div>
                 <div class="column col-1">
                 </div>
-                <div class="column col-5 col-ml-auto col-lg-12">
-                  <h1>Participate</h1>
-                  <p>Gluten-free craft beer fanny pack, single-origin coffee marfa organic wolf artisan kinfolk. Street art wolf godard migas hexagon stumptown. Austin tbh knausgaard viral, hell of raw denim vaporware occupy. Palo santo messenger bag cronut adaptogen waistcoat bicycle rights.
-                  </p>
-                  <p>
-                    Godard irony fixie banjo normcore poutine austin. Snackwave yuccie retro vinyl pabst tumblr swag intelligentsia jean shorts chambray venmo.
-                  </p>
+                <div class="column col-5 col-ml-auto col-lg-12 row">
+                  <div class="column">
+                    <h1>Participate</h1>
+                    <p>Gluten-free craft beer fanny pack, single-origin coffee marfa organic wolf artisan kinfolk. Street art wolf godard migas hexagon stumptown. Austin tbh knausgaard viral, hell of raw denim vaporware occupy. Palo santo messenger bag cronut adaptogen waistcoat bicycle rights.
+                    </p>
+                    <p>
+                      Godard irony fixie banjo normcore poutine austin. Snackwave yuccie retro vinyl pabst tumblr swag intelligentsia jean shorts chambray venmo.
+                    </p>
+                  </div>
+
+                  <div class="column reverse">
+                    <form action="" method="get" id="questionaire1">
+                    <input type="submit" class="button-left"/>
+                    </form>
+                    <textarea form="questionaire1" name="question1" placeholder="Type away (max. 750 signs please)" id="textarea1" class="input"></textarea>
+                    <input type="text" name="mail" class="input" placeholder="Please enter your email">
+                    <h5>Tell us what you think:</h5>
+                  </div>
+
                 </div>
               </div>
             </div>
@@ -178,6 +228,7 @@
 </body>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="jquery/waypoint/lib/jquery.waypoints.min.js"></script>
 <script src="js/main.js"></script>
 
 

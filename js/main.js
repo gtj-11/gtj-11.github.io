@@ -240,100 +240,36 @@ $(function(){
 });
 
 
+// Waypoints
 
+$(document).ready(function(){
 
-   // fetch('../api/collections/get/Portfolio?token=8d3444b9e3a754c53ed47638af55a7'
-   //  )
-   //  .then(collections => collections.json())
-   //  .then((collections) => {
-   //          let output = '';
-   //          collections.entries.forEach(function(project){
-   //          output +=
-   //          `
-   //          <div class="masonry__brick" data-aos="fade-up">
-   //              <div class="item-folio">
-   //
-   //                  <div class="item-folio__thumb">
-   //                      <a href="${project.galleryimg.path}" class="thumb-link" title="${project.title}" data-size="1050x700">
-   //                          <img src="${project.image.path}"
-   //                               srcset="${project.image.path}" alt="${project.title}">
-   //                      </a>
-   //                  </div>
-   //
-   //                  <div class="item-folio__text">
-   //                      <h3 class="item-folio__title">
-   //                          ${project.title}
-   //                      </h3>
-   //                      <p class="item-folio__cat">
-   //                          ${project.category}
-   //                      </p>
-   //                  </div>
-   //
-   //                  <a href="https://www.behance.net/" class="item-folio__project-link" title="Project link">
-   //                      <i class="icon-link"></i>
-   //                  </a>
-   //
-   //                  <div class="item-folio__caption">
-   //                      <p>${project.content}</p>
-   //                  </div>
-   //
-   //              </div>
-   //          </div>
-   //          `;
-   //        });
-   //        document.getElementById('portfolio').innerHTML = output;
-   //    })
+  // hide our element on page load
+  $('#about-waypoint').css('opacity', 0);
+  $('#about-waypoint2').css('opacity', 0);
+  $('#interact-waypoint').css('opacity', 0);
 
-   // function openRoom(evt, roomName) {
-   //   // Declare all variables
-   //   var i, tabcontent, tablinks, tabroom;
-   //
-   //   // Get all elements with class="tabcontent" and hide them
-   //   tabcontent = document.getElementsByClassName("tabcontent");
-   //   for (i = 0; i < tabcontent.length; i++) {
-   //     tabcontent[i].style.display = "none";
-   //   }
-   //
+  var aboutWaypoint = new Waypoint({
+    element: document.getElementById('about-waypoint'),
+    handler: function() {
+      $('#about-waypoint').addClass('animate__fadeInLeft');
+      console.log('triggered');
+    },  offset: '75%'
+  })
 
-   //   // Get all elements with class="tablinks" and remove the class "active"
-   //   tablinks = document.getElementsByClassName("tablinks");
-   //   for (i = 0; i < tablinks.length; i++) {
-   //     tablinks[i].className = tablinks[i].className.replace(" active", "");
-   //   }
-   //
-   //   tabroom = document.getElementsByClassName("tabroom");
-   //   for (i = 0; i < tabroom.length; i++) {
-   //     tabroom[i].style.display = "none";
-   //   }
-   //
-   //   // Show the current tab, and add an "active" class to the button that opened the tab
-   //   document.getElementById(roomName).style.display = "block";
-   //   evt.currentTarget.className += " active";
-   // }
+    var aboutWaypoint2 = new Waypoint({
+      element: document.getElementById('about-waypoint2'),
+      handler: function() {
+        $('#about-waypoint2').addClass('animate__fadeInRight');
+        console.log('triggered');
+      },  offset: '75%'
+    })
 
-   // function openRoom(evt, roomName, roomSvg) {
-   //   // Declare all variables
-   //   var i, tabcontent, tablinks, tabroom;
-   //
-   //   // Get all elements with class="tabcontent" and hide them
-   //   tabcontent = document.getElementsByClassName("tabcontent");
-   //   for (i = 0; i < tabcontent.length; i++) {
-   //     tabcontent[i].style.display = "none";
-   //   }
-   //
-   //   // Get all elements with class="tablinks" and remove the class "active"
-   //   tablinks = document.getElementsByClassName("tablinks");
-   //   for (i = 0; i < tablinks.length; i++) {
-   //     tablinks[i].className = tablinks[i].className.replace(" active", "");
-   //   }
-   //
-   //   tabroom = document.getElementsByClassName("tabroom");
-   //   for (i = 0; i < tabroom.length; i++) {
-   //     tabroom[i].style.display = "none";
-   //   }
-   //
-   //   // Show the current tab, and add an "active" class to the button that opened the tab
-   //   document.getElementById(roomName).style.display = "block";
-   //   document.getElementById(roomSvg).style.display = "block";
-   //   evt.currentTarget.className += " active";
-   // }
+    var interactWaypoint = new Waypoint({
+      element: document.getElementById('interact-waypoint'),
+      handler: function() {
+        $('#interact-waypoint').addClass('animate__fadeIn');
+        console.log('triggered');
+      },  offset: '25%'
+    })
+});

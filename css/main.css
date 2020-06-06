@@ -42,6 +42,7 @@ body {
     z-index: 2;
     margin: auto;
     width: 100%;
+    line-height: 26px;
   }
 
   .nav-wrapper {
@@ -57,29 +58,26 @@ body {
       transition: all 0.2s ease;
   }
 
-
-  .logo-reverse {
-    transform: rotate(-90deg);
-    position: fixed;
-    top: 54%;
-    left: -14%;
-    z-index: 99;
-    font-size: 7.5vw;
-    margin: 0;
-    padding: 0;
+  .logo-mobile {
+    display: block;
+    position: absolute;
+    top: 23px;
+    left: 23px;
+    font-size: 24px;
+    font-weight: bold;
   }
 
-  .language {
-      font-size: 16px;
-      /*border: 1px solid rgba(0, 0, 0, 0.2);*/
-      padding-bottom: 48px;
-      position: fixed;
-      bottom: 0;
-      z-index: 999;
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-    }
+  .hide-desk {
+    display: block;
+  }
+
+  .hide-desk .fas {
+    margin-right: 10px;
+  }
+
+  .break {
+    padding-top: 50px !important;
+  }
 
  a {
     transition: color 0.5s ease;
@@ -119,9 +117,16 @@ p span {
 .logo {
     font-weight: bold;
     display: inline-block;
+    vertical-align: middle;
     margin-top: 5px;
     margin-left: 20px;
     z-index: 3;
+    transform: rotate(-270deg);
+    -webkit-transform: rotate(-270deg);
+    -moz-transform: rotate(-270deg);
+    -ms-transform: rotate(-270deg);
+    -o-transform: rotate(-270deg);
+
 }
 
 .decor {
@@ -141,8 +146,8 @@ p span {
 
 .navbar-toggle {
     position: absolute;
-    top: 48px;
-    right: 20px;
+    top: 23px;
+    right: 23px;
     cursor: pointer;
     font-size: 24px;
     z-index: 3;
@@ -199,6 +204,7 @@ p span {
 .button-left {
   background-color: #FDFDFD;
   transition: border-color 0.5s ease;
+  outline: 5px solid #FDFDFD;
   border: 2px solid #0E0F0F;
   color: #0E0F0F;
   font-size: 20px;
@@ -215,30 +221,46 @@ p span {
    border-color: #E19900;
 }
 
-.tab {
-  border-bottom: none;
-  margin-bottom: 10vh;
-  display: inline-block;
+.columns .tabs {
+  margin: 1rem 0 1.5rem 0 !important;
+  display: flex;
+  min-height: 60px;
+  line-height: 60px;
+}
+
+.tabs > .tablinks {
+
+}
+
+.tabs > .tablinks:first-child {
+}
+
+.column .tablinks {
+  display: block;
+}
+.col-3 .tablinks {
+  width: 23%;
 }
 
 .tablinks {
   background-color: #FDFDFD;
-  transition: border-color 0.5s ease;
-  border: 2px solid #0E0F0F;
+  outline: 2px solid #0E0F0F;
+  transition: outline-color 0.9s ease;
+  outline-offset: -4px;
   color: #0E0F0F;
-  transition: color 0.3s ease;
+  transition: color 0.9s ease;
   font-size: 20px;
-  padding: 13px 39px;
   text-align: center;
   text-decoration: none;
-  display: inline;
-  margin: auto;
-  margin-top: 39px;
   cursor: pointer;
+  -webkit-transition: color .6s, outline-color .7s ease-out;
+  -moz-transition: color .6s, outline-color .7s ease-out;
+  -o-transition: color .6s, outline-color .7s ease-out;
+  transition: color .6s, outline-color .7s ease-out;
 }
 
 .tablinks:hover {
-    border-color: #E19900;
+    outline-color: #E19900;
     color: #E19900;
    }
 
@@ -273,7 +295,7 @@ p span {
 }
 
 .hero {
-  padding-top: 34vh;
+  padding-top: 17.5vh;
 }
 
 .hero h1 {
@@ -364,18 +386,141 @@ svg {
   flex-direction: column-reverse;
 }
 
+.row {
+  flex-direction: column;
+}
+
+  /* Vertical Menu */
+
+  .vertical-menu {
+  position: fixed;
+  z-index: 999999;
+  width: 16vw;
+  left: -2vw;
+  height: 90vh;
+  display: none;
+  flex-direction: column;
+  transform-origin: center center;
+  top:5%
+  }
+
+  .top-lng {
+
+  display: none;
+  flex-direction: column;
+  margin-bottom: auto;
+  text-align: center;
+
+  }
+
+  .logo-container {
+
+  margin: auto;
+
+
+
+  }
+
+  .logo-container a {
+  display: block;
+  transform-origin: center center;
+  transform: rotateZ(-90deg);
+  font-weight: bold;
+  font-size: 3vw;
+  white-space: nowrap;
+
+
+  }
+
+  .button-container {
+  margin-top: auto;
+  text-align: center;
+  display: none;
+  }
+
+
+
 @media screen and (min-width: 768px) {
+
+
+  .logo-mobile {
+    display: none;
+  }
+
+  /* Vertical Menu */
+
+  .vertical-menu {
+  position: fixed;
+  z-index: 999999;
+  width: 16vw;
+  left: -2vw;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  transform-origin: center center;
+  top:5%
+  }
+
+  .top-lng {
+
+  display: flex;
+  flex-direction: column;
+  margin-bottom: auto;
+  text-align: center;
+
+  }
+
+  .top-lng a {
+
+    padding-top: 10px;
+
+  }
+
+  .logo-container {
+
+  margin: auto;
+
+
+
+  }
+
+  .logo-container a {
+  display: block;
+  transform-origin: center center;
+  transform: rotateZ(-90deg);
+  font-weight: bold;
+  font-size: 3vw;
+  white-space: nowrap;
+
+
+
+  }
+
+  .button-container {
+  margin-top: auto;
+  text-align: center;
+  display: block;
+  }
+
+ /* Vertical Menu End */
+  .hide-desk {
+    display: none;
+  }
 
   .section {
         max-width: 90%;
   }
 
-  .crop {
-        max-width: 60%;
+  .hero {
+    padding-top: 34vh;
   }
 
-  .logo-reverse {
-    left: -12%;
+  .columns {
+    max-width: 100%;
+  }
+
+  .crop {
+        max-width: 60%;
   }
 
     /* Navigation Start */
@@ -395,7 +540,7 @@ svg {
     }
     .main-nav {
         display: inline-flex;
-        right: 10%;
+        right: 5%;
         position: fixed;
     }
 
@@ -413,6 +558,7 @@ svg {
     }
     .nav-links {
         margin-left: 40px;
+        font-weight: bold;
     }
     .logo {
         margin-top: 0;
@@ -430,36 +576,6 @@ svg {
       min-height: 75vh;
     }
 
-    .logo-reverse {
-      left: -4%;
-      top: 50vh;
-      font-size: 5.25vw;
-    }
-
-    .decor {
-      text-decoration: none !important;
-      transition: -webkit-text-fill-color 0.8s ease;
-      -webkit-text-fill-color: #0E0F0F !important; /* Will override color (regardless of order) */
-      -webkit-text-stroke-width: 1.5px !important;
-      -webkit-text-stroke-color: #0E0F0F !important;
-    }
-
-    .decor:hover {
-      text-decoration: none !important;
-      -webkit-text-fill-color: transparent !important; /* Will override color (regardless of order) */
-      -webkit-text-stroke-width: 1.5px !important;
-      -webkit-text-stroke-color: #0E0F0F !important;
-    }
-}
-
-    /* Navigation Ende */
-
-    /* SVG Container */
-
-/*    .svg-div {
-      float: right;
-      width: 30% !important;
-    } */
 
   @media screen and (min-width: 960px) {
     .crop {
@@ -471,10 +587,38 @@ svg {
       flex-direction: row-reverse;
     }
 
-    .logo-reverse {
-      left: -5.3%;
-      top: 45vh;
-      font-size: 5.25vw;
+
+  }
+
+  @media screen and (min-width: 1920px) {
+
+    /* Vertical Menu */
+
+    .vertical-menu {
+    width: 16vw;
+    left: -2vw;
+    }
+
+    .logo-container a {
+    display: block;
+    transform-origin: center center;
+    transform: rotateZ(-90deg);
+    font-weight: bold;
+    font-size: 3vw;
+    white-space: nowrap;
+
     }
 
   }
+
+  /* Animate Duration */
+
+:root {
+  --animate-duration: 1500ms;
+  --animate-delay: 1.9s;
+}
+
+.animate__animated.animate__fadeIn {
+  --animate-duration: 2s;
+  --animate-delay: 2s;
+}

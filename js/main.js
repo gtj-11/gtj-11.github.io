@@ -248,12 +248,14 @@ $(document).ready(function(){
   $('#about-waypoint').css('opacity', 0);
   $('#about-waypoint2').css('opacity', 0);
   $('#interact-waypoint').css('opacity', 0);
+  $('#participate-waypoint').css('opacity', 0);
+  $('#team-waypoint2').css('opacity', 0);
+  $('#team-waypoint1').css('opacity', 0);
 
   var aboutWaypoint = new Waypoint({
     element: document.getElementById('about-waypoint'),
     handler: function() {
       $('#about-waypoint').addClass('animate__fadeInLeft');
-      console.log('triggered');
     },  offset: '75%'
   })
 
@@ -261,7 +263,6 @@ $(document).ready(function(){
       element: document.getElementById('about-waypoint2'),
       handler: function() {
         $('#about-waypoint2').addClass('animate__fadeInRight');
-        console.log('triggered');
       },  offset: '75%'
     })
 
@@ -269,8 +270,28 @@ $(document).ready(function(){
       element: document.getElementById('interact-waypoint'),
       handler: function() {
         $('#interact-waypoint').addClass('animate__fadeIn');
-        console.log('triggered');
       },  offset: '25%'
+    })
+
+    var participateWaypoint = new Waypoint({
+      element: document.getElementById('participate-waypoint'),
+      handler: function() {
+        $('#participate-waypoint').addClass('animate__fadeIn');
+      },  offset: '35%'
+    })
+
+    var teamWaypoint = new Waypoint({
+      element: document.getElementById('team-waypoint1'),
+      handler: function() {
+        $('#team-waypoint1').addClass('animate__fadeInLeft');
+      },  offset: '50%'
+    })
+
+    var teamWaypoint = new Waypoint({
+      element: document.getElementById('team-waypoint2'),
+      handler: function() {
+        $('#team-waypoint2').addClass('animate__fadeInRight');
+      },  offset: '50%'
     })
 });
 

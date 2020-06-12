@@ -202,6 +202,9 @@ function fetchLingo () {
 //CALL LINGO FUNCTION
 
 fetchLingo();
+//LINGO TABS
+
+
 
 //Interactive Map
 
@@ -238,6 +241,7 @@ $(function(){
 
   });
 });
+
 
 
 // Waypoints
@@ -284,14 +288,14 @@ $(document).ready(function(){
       element: document.getElementById('team-waypoint1'),
       handler: function() {
         $('#team-waypoint1').addClass('animate__fadeInLeft');
-      },  offset: '50%'
+      },  offset: '65%'
     })
 
     var teamWaypoint = new Waypoint({
       element: document.getElementById('team-waypoint2'),
       handler: function() {
         $('#team-waypoint2').addClass('animate__fadeInRight');
-      },  offset: '50%'
+      },  offset: '65%'
     })
 });
 

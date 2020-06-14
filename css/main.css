@@ -212,7 +212,7 @@ p span {
 .section {
 
       max-width: 100%;
-      min-height: 20vh;
+      min-height: 100vh;
       margin: auto;
       background-color: #FFFFFF;
       padding-top: 10vh;
@@ -220,10 +220,17 @@ p span {
       position: relative;
       border-color: #e74c3c;
       border-width: 1px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
 }
 
 .title {
   margin: auto;
+}
+
+.button:hover {
+  text-decoration: none;
 }
 
 .button {
@@ -231,6 +238,7 @@ p span {
   transition: border-color 0.5s ease;
   border: 2px solid #0E0F0F;
   color: #0E0F0F;
+  transition: color 0.5s ease;
   padding: 13px 39px;
   text-align: center;
   text-decoration: none;
@@ -250,6 +258,7 @@ p span {
   outline: 5px solid #FFFFFF;
   border: 2px solid #0E0F0F;
   color: #0E0F0F;
+  transition: color 0.5s ease;
   font-size: 20px;
   padding: 13px 39px;
   text-align: center;
@@ -262,6 +271,7 @@ p span {
 
 .button-left:hover {
    border-color: #E19900;
+   color: #E19900;
 }
 
 .columns .tabs {

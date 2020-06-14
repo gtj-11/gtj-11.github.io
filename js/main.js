@@ -190,6 +190,7 @@ function fetchLingo () {
 
           $(function() {
             $('.trans').click(function() {
+
               var lng = $(this).attr('id');
 
               $('.lng').each(function(index, element){

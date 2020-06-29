@@ -256,6 +256,7 @@ $(document).ready(function(){
   $('#participate-waypoint').css('opacity', 0);
   $('#team-waypoint2').css('opacity', 0);
   $('#team-waypoint1').css('opacity', 0);
+  $('#time-waypoint').css('opacity', 0);
 
   var aboutWaypoint = new Waypoint({
     element: document.getElementById('about-waypoint'),
@@ -298,6 +299,13 @@ $(document).ready(function(){
         $('#team-waypoint2').addClass('animate__fadeInRight');
       },  offset: '65%'
     })
+
+    var teamWaypoint = new Waypoint({
+      element: document.getElementById('time-waypoint'),
+      handler: function() {
+        $('#time-waypoint').addClass('animate__fadeIn');
+      },  offset: '35%'
+    })
 });
 
 // SmoothScroll
@@ -313,4 +321,29 @@ $(function() {
             return false;
         }
     });
+});
+
+// timeline
+
+$(function(){
+  $('.timelinks').on('click', function() {
+    $('.timelinks.timeactive').removeClass('timeactive');
+    $(this).addClass('timeactive');
+    //Figure out which panel to Show
+    var timeToShow = $(this).attr('rel');
+
+    //Hide current panel
+    $('.timecontent.timetabactive').fadeOut(500, showNextPanel);
+    //Show new panel
+    function showNextPanel() {
+      $(this).removeClass('timetabactive');
+
+      $('#' + timeToShow).fadeIn(500, function() {
+
+        $(this).addClass('timetabactive');
+
+      });
+    }
+
+  });
 });

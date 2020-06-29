@@ -44,8 +44,21 @@ img:focus {
 
 }
 
+.timeholder {
+  max-width: 100% !important;
+}
 
+.max-width {
+  max-width: 100% !important;
+}
 
+.static-width {
+  width: 100vw !important;
+}
+
+.ac-center {
+  text-align: center;
+}
   /* Fonts Sizes */
 
 @media screen and (min-width: 310px) {
@@ -207,6 +220,10 @@ p span {
   justify-content: center;
 }
 
+.acimg {
+  padding-bottom: 25px;
+}
+
   /* Navigation Ende */
 
 .section {
@@ -282,13 +299,6 @@ p span {
   max-width: 100% !important;
 }
 
-.tabs > .tablinks {
-
-}
-
-.tabs > .tablinks:first-child {
-}
-
 .column .tablinks {
   display: block;
 }
@@ -329,6 +339,74 @@ p span {
   color: #E19900 !important;
   }
 
+  /* timeline */
+
+  .column .timelinks {
+    display: block;
+  }
+  .col-3 .timelinks {
+    width: 23%;
+  }
+
+  .timelinks {
+    background-color: #FFFFFF;
+    color: #0E0F0F;
+    transition: color 0.9s ease;
+    font-size: 12px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    -webkit-transition: color .6s, outline-color .7s ease-out;
+    -moz-transition: color .6s, outline-color .7s ease-out;
+    -o-transition: color .6s, outline-color .7s ease-out;
+    transition: color .6s, outline-color .7s ease-out;
+    padding-bottom: 50px;
+  }
+
+
+  .timelinks:hover {
+      color: #E19900;
+     }
+
+  .timelinks.active {
+     color: #E19900;
+    }
+
+   .timelinks.timeactive {
+    color: #E19900 !important;
+    }
+
+    .timecontent {
+     display: none !important;
+    }
+
+    .timetabactive {
+      display: flex !important;
+    }
+
+
+    .timemobilelinks {
+
+      background-color: #FFFFFF;
+      color: #0E0F0F;
+      transition: color 0.9s ease;;
+      text-decoration: none;
+      cursor: pointer;
+      -webkit-transition: color .6s, outline-color .7s ease-out;
+      -moz-transition: color .6s, outline-color .7s ease-out;
+      -o-transition: color .6s, outline-color .7s ease-out;
+      transition: color .6s, outline-color .7s ease-out;
+    }
+
+
+    .timemobilelinks:hover {
+        color: #E19900;
+       }
+
+    .timemobilelinks.active {
+       color: #E19900;
+      }
+
 #intro {
   min-height: 100vh;
   display: flex;
@@ -339,6 +417,10 @@ p span {
 .columns {
   max-width: 75%;
   margin: auto;
+}
+
+.special {
+  min-width: 100% !important;
 }
 
 .column {
@@ -372,7 +454,7 @@ p span {
 .svgdiv {
   justify-content: center;
   margin-top: 1rem;
-  margin-top: auto;
+  margin-top: 250px;
   padding-bottom: 175px;
   display: none;
 }
@@ -518,6 +600,15 @@ svg {
 .lingoactive {
   color: #E19900;
   text-decoration: underline;
+}
+
+
+.placeholder {
+  min-height: 60vh;
+}
+
+.timetabs {
+  min-width: 80vw;
 }
 
 @media screen and (min-width: 768px) {
@@ -758,4 +849,21 @@ svg {
 
 .animate__animated.animate__fadeIn {
   --animate-duration: 2s;
+}
+
+.timeholder {
+  overflow: hidden !important;
+  overflow-x: hidden !important;
+  max-width: 100% !important;
+  min-height: 50vh;
+}
+
+.columns.col-oneline {
+  overflow: hidden !important;
+  overflow-x: hidden !important;
+}
+
+.column .col-12 h1 {
+  margin: auto;
+  padding-bottom: 50px;
 }
